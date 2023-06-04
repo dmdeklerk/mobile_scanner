@@ -26,7 +26,7 @@ class MobileScannerWebPlugin {
     );
     final MobileScannerWebPlugin instance = MobileScannerWebPlugin();
 
-    _jsLibrariesLoadingFuture = injectJSLibraries(barCodeReader.jsLibraries);
+    _jsLibrariesLoadingFuture = Future.value(); ///injectJSLibraries(barCodeReader.jsLibraries);
 
     channel.setMethodCallHandler(instance.handleMethodCall);
     event.setController(instance.controller);
@@ -52,7 +52,7 @@ class MobileScannerWebPlugin {
   ///   runApp(const MaterialApp(home: MyHome()));
   /// }
   static WebBarcodeReaderBase barCodeReader =
-      ZXingBarcodeReader(videoContainer: vidDiv);
+      JsQrCodeReader(videoContainer: vidDiv);
   StreamSubscription? _barCodeStreamSubscription;
 
   static late Future _jsLibrariesLoadingFuture;
