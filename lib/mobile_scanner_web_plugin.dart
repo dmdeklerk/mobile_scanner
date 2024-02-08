@@ -48,7 +48,7 @@ class MobileScannerWebPlugin {
   ///   runApp(const MaterialApp(home: MyHome()));
   /// }
   static WebBarcodeReaderBase barCodeReader =
-      ZXingBarcodeReader(videoContainer: vidDiv);
+      JsQrCodeReader(videoContainer: vidDiv);
   StreamSubscription? _barCodeStreamSubscription;
 
   /// Handle incomming messages
